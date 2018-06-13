@@ -99,7 +99,7 @@ function processRollClicking(event) {
 
 function initMoney() {
   let money = javaScriptCallToSwift.getMoney();
-  return money || 0;
+  return money || 3000;
 }
 
 function renderMoney(money) {

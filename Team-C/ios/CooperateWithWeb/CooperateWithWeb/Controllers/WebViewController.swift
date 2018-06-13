@@ -18,7 +18,7 @@ import JavaScriptCore
 class JavaScriptFunc:NSObject, JavaScriptFuncProtcol{
     
     var gameMoney = 50000
-    var resultArray:[String] = []
+    var resultArray:[String] = UserDefaults.standard.array(forKey: UserDefaultsKeyManager.resultArray) as? [String] ?? []
     var gameStart:Bool? = UserDefaults.standard.bool(forKey: "gameStart")
     
     func getMoney()->Int{
@@ -67,6 +67,7 @@ class WebViewController: UIViewController, UIWebViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UserDefaults.standard.array(forKey: UserDefaultsKeyManager.resultArray))
         webView.delegate = self
         //測試加載本地HTML頁面
         let url = Bundle.main.url(forResource: "index", withExtension: "html")

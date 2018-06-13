@@ -54,21 +54,12 @@ class CardResultViewController: UIViewController {
             print(eachImageName)
             self.imageArray.append(eachImageName)
         }
-//        UserDefaults.standard.set(imageArray, forKey: "imageArray")
         print("imageArray裡面",imageArray)
-        
-        
-//        guard let jsonData = jsonString?.data(using: String.Encoding.utf8) else {return}
-//        do {
-//            let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-//
-//
-//            guard let jsonDic = json as? NSDictionary else {return}
-//        } catch {
-//            print("無法解析成json")
+//        for i in 0...imageArray.count - 1{
+//            if imageArray[i+1] == imageArray[i]{
+//                 
+//            }
 //        }
-    
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,6 +76,7 @@ extension CardResultViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cardResultCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardResultCell", for: indexPath) as! CardResultCollectionViewCell
+        cardResultCell.index = indexPath
         cardResultCell.updateUI(cardName: imageArray[indexPath.item])
         return cardResultCell
     }

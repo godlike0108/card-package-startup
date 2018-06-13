@@ -18,27 +18,30 @@ import JavaScriptCore
 class JavaScriptFunc:NSObject, JavaScriptFuncProtcol{
     
     var gameMoney = 50000
+    var resultArray:[String] = []
+    var gameStart:Bool? = UserDefaults.standard.bool(forKey: "gameStart")
     
     func getMoney()->Int{
+        if gameStart == false{
+            UserDefaults.standard.set(true, forKey: "gameStart")
+            return gameMoney
+        }
+        self.gameMoney = UserDefaults.standard.integer(forKey: UserDefaultsKeyManager.remainingMoney)
         print(self.gameMoney)
         return self.gameMoney
-//        if UserDefaults.standard.integer(forKey: UserDefaultsKeyManager.remainingMoney) != nil{
-//            print("1")
-//            return UserDefaults.standard.integer(forKey: UserDefaultsKeyManager.remainingMoney)
-//        }else{
-//            print("500")
-//            return 500
-//        }
     }
     
     func updateCardList(_ result:String){
         print("updateCard")
+        resultArray.append(result)
         UserDefaults.standard.setValue(result, forKey: UserDefaultsKeyManager.resultJSON)
-        print(result)
+        UserDefaults.standard.set(resultArray, forKey: UserDefaultsKeyManager.resultArray)
+        print("Result陣列",resultArray)
         
     }
     
     func updateMoney(_ money: Int) {
+        print(money)
         print("updateMoney")
         UserDefaults.standard.set(money, forKey: UserDefaultsKeyManager.remainingMoney)
     }

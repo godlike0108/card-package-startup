@@ -10,4 +10,5 @@ import Foundation
 struct UserDefaultsKeyManager {
     static let resultJSON = "resultJSON"
     static let remainingMoney = "remainingMoney"
+    static let resultArray = "resultArray"
 }

@@ -119,6 +119,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="u4P-pP-aES"/>
                     <connections>
                         <outlet property="cardResultCollectionView" destination="6nJ-PB-DJv" id="fPz-pe-9Gc"/>
+                        <outlet property="remainingMoneyLabel" destination="Lm1-Vj-tfl" id="rLJ-Ej-mjj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7w-m3-adx" userLabel="First Responder" sceneMemberID="firstResponder"/>

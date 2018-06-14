@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,16 +60,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tng-hf-ggh">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tng-hf-ggh">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="抽卡" id="uP7-6a-MXf"/>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6nJ-PB-DJv">
-                                <rect key="frame" x="0.0" y="101" width="375" height="517"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6nJ-PB-DJv">
+                                <rect key="frame" x="0.0" y="93" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ssf-Vb-Caa">
                                     <size key="itemSize" width="130" height="160"/>
@@ -105,15 +103,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="顯示餘額:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lm1-Vj-tfl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="顯示餘額:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lm1-Vj-tfl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lm1-Vj-tfl" firstAttribute="top" secondItem="Tng-hf-ggh" secondAttribute="bottom" id="4UP-fJ-wh4"/>
+                            <constraint firstItem="Tng-hf-ggh" firstAttribute="height" secondItem="hbt-Od-1QJ" secondAttribute="height" multiplier="44:667" id="7A8-Ja-Ne9"/>
+                            <constraint firstItem="6nJ-PB-DJv" firstAttribute="trailing" secondItem="0nC-VO-L7Z" secondAttribute="trailing" id="7KR-Sd-aRO"/>
+                            <constraint firstItem="Lm1-Vj-tfl" firstAttribute="height" secondItem="hbt-Od-1QJ" secondAttribute="height" multiplier="29:667" id="K9c-Bp-Nxm"/>
+                            <constraint firstItem="Tng-hf-ggh" firstAttribute="trailing" secondItem="0nC-VO-L7Z" secondAttribute="trailing" id="KT5-YQ-Tr9"/>
+                            <constraint firstItem="6nJ-PB-DJv" firstAttribute="leading" secondItem="0nC-VO-L7Z" secondAttribute="leading" id="OPp-g1-klJ"/>
+                            <constraint firstItem="Tng-hf-ggh" firstAttribute="top" secondItem="0nC-VO-L7Z" secondAttribute="top" id="Q6W-2m-22e"/>
+                            <constraint firstItem="Tng-hf-ggh" firstAttribute="leading" secondItem="0nC-VO-L7Z" secondAttribute="leading" id="bLq-pJ-o1B"/>
+                            <constraint firstItem="6nJ-PB-DJv" firstAttribute="bottom" secondItem="0nC-VO-L7Z" secondAttribute="bottom" id="cUg-gH-mqY"/>
+                            <constraint firstItem="6nJ-PB-DJv" firstAttribute="top" secondItem="Lm1-Vj-tfl" secondAttribute="bottom" id="i2Q-sP-LkT"/>
+                            <constraint firstItem="Lm1-Vj-tfl" firstAttribute="trailing" secondItem="0nC-VO-L7Z" secondAttribute="trailing" id="lbb-4r-uf0"/>
+                            <constraint firstItem="Lm1-Vj-tfl" firstAttribute="leading" secondItem="0nC-VO-L7Z" secondAttribute="leading" id="s1d-7c-zHq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0nC-VO-L7Z"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="u4P-pP-aES"/>
